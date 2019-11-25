@@ -64,6 +64,8 @@ void List::insert(int n) {
     curr_node->next->val = n;
     curr_node->next->prev = curr_node;
     curr_node->next->next = NULL;
+    // Clean up
+    // delete curr_node;
     return;
   }
 }
@@ -81,6 +83,9 @@ void List::reverse() {
     // our node in last node
     swap(curr_node->next,curr_node->prev);
     swap(this->first,curr_node);
+    // Clean up
+    // delete curr_node;
+    // delete temp_point;
     return;
   }
 }
@@ -96,10 +101,13 @@ void List::print(){
       curr_node = curr_node->next;
     }
     cout << curr_node->val << endl;
+    // Clean up
+    // delete curr_node;
   }
 }
-//
-//int main() {
+
+
+int main() {
 //
 //  // How to alocate on heap
 //
@@ -118,23 +126,24 @@ void List::print(){
 //
 //  //cout << p_demo->val << endl;
 //
-//  List new_list;
-//
-//  new_list.insert(3);
-//
-//  new_list.insert(4);
-//
-//  new_list.insert(5);
-//
-//  new_list.insert(6);
-//
-//  new_list.print();
-//
-//  new_list.reverse();
-//
-//  new_list.print();
-//
-//  return 0;
-//}
+
+  List new_list;
+
+  new_list.insert(3);
+
+  new_list.insert(4);
+
+  new_list.insert(5);
+
+  new_list.insert(6);
+
+  new_list.print();
+
+  new_list.reverse();
+
+  new_list.print();
+
+  return 0;
+}
 
 
